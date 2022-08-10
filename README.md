@@ -4,6 +4,6 @@
         <meta charset="utf-8" />
     </head>
     <body>
-        <img src="C:\Users\HELLO\Downloads\Lcvoiture\Lcvoiture\Lcvoiture\images\carHome.PNG" >
+        <img src="~\images\carHome.PNG" >
     </body>
 </html>
