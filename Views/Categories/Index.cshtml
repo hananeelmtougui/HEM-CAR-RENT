@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Lcvoiture.Models.Categorie>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Catégories</h2>
+
+<p>
+    @Html.ActionLink("Créer une nouvelle catégorie", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.ActionLink("Modifier", "Edit", new { id=item.categorieID }, new { @class = "btn btn-outline-primary" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.categorieID }, new { @class = "btn btn-outline-success" }) |
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.categorieID }, new { @class = "btn btn-outline-danger" })
+        </td>
+    </tr>
+}
+
+</table>

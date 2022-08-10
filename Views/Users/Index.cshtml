@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Lcvoiture.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Créer un nouveau!", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nom_Complet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date_Naissance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tele)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.image_CIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image_Permis)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nom_Complet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_Naissance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tele)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        
+        <td>
+            <img style="width: 250px; max-width:250px" src="~/images/@item.image_CIN" alt="@item.nom_Complet">
+        </td>
+        <td >
+            <img style="width: 250px; max-width:250px" src="~/images/@item.image_Permis" alt="@item.nom_Complet">
+        </td>
+       
+        <td>
+           
+
+            <div class="btn-group">
+
+
+
+                @Html.ActionLink("Modifier", "Edit", new { id = @item.userID }, new { @class = "btn btn-outline-primary" })
+                @Html.ActionLink("Details", "Details", new { id = @item.userID }, new { @class = "btn btn-outline-success" })
+                @Html.ActionLink("Supprimer", "Delete", new { id = @item.userID }, new { @class = "btn btn-outline-danger" })
+
+
+
+
+            </div>
+        </td>
+    </tr>
+}
+
+</table>

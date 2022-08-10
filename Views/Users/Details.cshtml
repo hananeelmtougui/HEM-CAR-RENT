@@ -1,0 +1,79 @@
+﻿@model Lcvoiture.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nom_Complet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nom_Complet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_Naissance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_Naissance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tele)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tele)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image_CIN)
+        </dt>
+
+        <dd>
+            <img style="width: 250px; max-width:250px" src="~/images/@Model.image_CIN" >
+        </dd>
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image_Permis)
+        </dt>
+
+        <dd>
+            <img style="width: 250px; max-width:250px" src="~/images/@Model.image_Permis" >
+        </dd>
+
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.userID }) |
+    @Html.ActionLink("Retourner à la liste", "Index")
+</p>
